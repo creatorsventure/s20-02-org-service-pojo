@@ -1,5 +1,6 @@
 package com.cv.s2002orgservicepojo.dto;
 
+import com.cv.s10coreservice.annotation.ValidPassword;
 import com.cv.s10coreservice.dto.generic.GenericDto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -14,6 +15,11 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @ToString(callSuper = true)
+@ValidPassword(
+        passwordField = "password",
+        confirmPasswordField = "confirmPassword",
+        message = "${password.invalid}"
+)
 public class SignupDto extends GenericDto {
 
     @NotBlank(message = "${app.code.002}")
@@ -46,4 +52,12 @@ public class SignupDto extends GenericDto {
     @Size(min = 3, max = 250, message = "${app.code.005}")
     @Email(message = "${app.code.007}")
     private String email;
+
+    @NotBlank(message = "${app.code.002}")
+    @NotNull(message = "${app.code.003}")
+    private String password;
+
+    @NotBlank(message = "${app.code.002}")
+    @NotNull(message = "${app.code.003}")
+    private String confirmPassword;
 }

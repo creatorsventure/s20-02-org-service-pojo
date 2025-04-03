@@ -28,8 +28,7 @@ public class Password extends GenericEntity implements Serializable {
 
     @NotBlank(message = "${app.code.002}")
     @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
-    @Column
+    @Column(columnDefinition = "TEXT")
     private String encryptedPassword;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
