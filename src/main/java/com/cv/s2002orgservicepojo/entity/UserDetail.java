@@ -58,4 +58,7 @@ public class UserDetail extends GenericEntity implements Serializable {
 
     @OneToOne(mappedBy = "userDetail", fetch = FetchType.EAGER)
     private Password password;
+
+    @OneToMany(mappedBy = "userDetail", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Token> tokenList;
 }
