@@ -1,7 +1,6 @@
 package com.cv.s2002orgservicepojo.dto;
 
 import com.cv.s10coreservice.dto.generic.GenericDto;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -9,7 +8,6 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Data
 @SuperBuilder
@@ -17,10 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class MenuDto extends GenericDto implements Comparable<MenuDto>, Serializable {
+public class MenuDto extends GenericDto implements Serializable {
 
-    @NotBlank(message = "{app.code.002}")
-    @NotNull(message = "{app.code.003}")
     @Size(min = 3, max = 250, message = "{app.code.005}")
     private String path;
 
@@ -51,12 +47,4 @@ public class MenuDto extends GenericDto implements Comparable<MenuDto>, Serializ
     @NotNull(message = "{app.code.003}")
     private String moduleId;
 
-    @JsonProperty("submenu")
-    private List<MenuDto> subMenuList;
-
-
-    @Override
-    public int compareTo(MenuDto o) {
-        return this.getDisplayPosition() < o.getDisplayPosition() ? -1 : 1;
-    }
 }
