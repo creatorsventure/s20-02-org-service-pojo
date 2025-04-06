@@ -19,34 +19,34 @@ import java.util.List;
 @ValidMobileNumber(
         countryCodeField = "countryCode",
         mobileNumberField = "mobileNumber",
-        message = "${app.code.002}"
+        message = "${app.message.failure.phone}"
 )
 public class UserDetailDto extends GenericDto implements Serializable {
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
     private String userId;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 25, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 25, message = "${core.message.failure.size}")
     private String mobileNumber;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 25, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 5, message = "${core.message.failure.size}")
     private String countryCode;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
-    @Email(message = "${app.code.007}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @Email(message = "${core.message.failure.email}")
     private String email;
 
     private LocalDateTime lastLogin;
 
-    @NotEmpty(message = "${app.code.003}")
+    @NotEmpty(message = "${core.message.failure.empty}")
     private List<String> selectedRoleIds;
 
 }

@@ -17,34 +17,31 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class MenuDto extends GenericDto implements Serializable {
 
-    @Size(min = 3, max = 250, message = "{app.code.005}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
     private String path;
 
-    @NotBlank(message = "{app.code.002}")
-    @NotNull(message = "{app.code.003}")
-    @Size(min = 3, max = 250, message = "{app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
     private String icon;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
     private String iconType;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
     private String iconTheme;
 
-    @NotNull(message = "{app.code.003}")
+    @NotNull(message = "${core.message.failure.null}")
     private String rootMenuId;
 
-    @NotNull(message = "{app.code.003}")
+    @NotNull(message = "${core.message.failure.null}")
     private Integer displayPosition;
 
-    @NotNull(message = "{app.code.003}")
+    @NotNull(message = "${core.message.failure.null}")
     private Integer menuType;
-
-    @NotNull(message = "{app.code.003}")
-    private String moduleId;
 
 }

@@ -18,46 +18,46 @@ import lombok.experimental.SuperBuilder;
 @ValidPassword(
         passwordField = "password",
         confirmPasswordField = "confirmPassword",
-        message = "${password.invalid}"
+        message = "${app.message.failure.password}"
 )
 public class SignupDto extends GenericDto {
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
     private String userId;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
     private String organizationCode;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
     private String organizationName;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 25, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 25, message = "${core.message.failure.size}")
     private String mobileNumber;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 25, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 5, message = "${core.message.failure.size}")
     private String countryCode;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
-    @Email(message = "${app.code.007}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @Email(message = "${core.message.failure.email}")
     private String email;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
     private String password;
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
     private String confirmPassword;
 }

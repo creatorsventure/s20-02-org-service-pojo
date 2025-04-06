@@ -18,9 +18,9 @@ import java.io.Serializable;
 @ToString(callSuper = true)
 public class PermissionDto extends GenericDto implements Serializable {
 
-    @NotBlank(message = "${app.code.002}")
-    @NotNull(message = "${app.code.003}")
-    @Size(min = 3, max = 250, message = "${app.code.005}")
+    @NotBlank(message = "${core.message.failure.blank}")
+    @NotNull(message = "${core.message.failure.null}")
+    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
     private String permissionCode;
 
 }

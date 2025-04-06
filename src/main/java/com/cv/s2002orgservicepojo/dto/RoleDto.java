@@ -16,13 +16,13 @@ import java.util.List;
 @ToString(callSuper = true)
 public class RoleDto extends GenericDto implements Serializable {
 
-    @NotEmpty(message = "${app.code.002}")
+    @NotEmpty(message = "${core.message.failure.empty}")
     private List<String> selectedOrganizationIds;
 
-    @NotEmpty(message = "${app.code.002}")
+    @NotEmpty(message = "${core.message.failure.empty}")
     private List<String> selectedMenuIds;
 
-    @NotEmpty(message = "${app.code.002}")
+    @NotEmpty(message = "${core.message.failure.empty}")
     private List<String> selectedPermissionIds;
 
 }
