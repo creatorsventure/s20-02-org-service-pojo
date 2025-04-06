@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -19,27 +20,30 @@ import java.time.LocalDateTime;
 @Entity
 public class Token implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = -2885838288314309305L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     @Column
     private String tokenHash;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     @Column
     private String userId;
 
-    @NotNull(message = "${core.message.failure.null}")
+    @NotNull(message = "${app.message.failure.blank}")
     @Column
     private LocalDateTime issuedAt;
 
-    @NotNull(message = "${core.message.failure.null}")
+    @NotNull(message = "${app.message.failure.blank}")
     @Column
     private LocalDateTime expiresAt;
 

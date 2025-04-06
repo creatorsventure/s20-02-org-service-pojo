@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @Getter
@@ -18,18 +19,21 @@ import java.io.Serializable;
 public class PasswordDto extends GenericDto implements Serializable {
 
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @Serial
+    private static final long serialVersionUID = 8486963583625485709L;
+
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     private String password;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     private String oldPassword;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
     private String userDetailId;
 
 

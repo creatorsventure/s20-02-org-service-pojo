@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @Data
@@ -17,31 +18,35 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class MenuDto extends GenericDto implements Serializable {
 
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+
+    @Serial
+    private static final long serialVersionUID = 3597327202696421037L;
+
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     private String path;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     private String icon;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     private String iconType;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     private String iconTheme;
 
-    @NotNull(message = "${core.message.failure.null}")
+    @NotNull(message = "${app.message.failure.blank}")
     private String rootMenuId;
 
-    @NotNull(message = "${core.message.failure.null}")
+    @NotNull(message = "${app.message.failure.blank}")
     private Integer displayPosition;
 
-    @NotNull(message = "${core.message.failure.null}")
+    @NotNull(message = "${app.message.failure.blank}")
     private Integer menuType;
 
 }

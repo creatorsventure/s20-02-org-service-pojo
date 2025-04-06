@@ -8,6 +8,7 @@ import jakarta.persistence.ManyToMany;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
@@ -19,6 +20,9 @@ import java.util.List;
 @ToString(callSuper = true)
 @Entity
 public class Role extends GenericEntity implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = -898422367882946943L;
 
     @ManyToMany
     @JoinTable(name = "role_organization_mapping",

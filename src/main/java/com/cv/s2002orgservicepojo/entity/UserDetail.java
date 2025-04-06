@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,27 +22,30 @@ import java.util.List;
 @Entity
 public class UserDetail extends GenericEntity implements Serializable {
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @Serial
+    private static final long serialVersionUID = 968092115767358060L;
+
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     @Column(unique = true)
     private String userId;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 25, message = "${core.message.failure.size}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 25, message = "${app.message.failure.size}")
     @Column
     private String mobileNumber;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 5, message = "${core.message.failure.size}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 5, message = "${app.message.failure.size}")
     @Column
     private String countryCode;
 
-    @NotBlank(message = "${core.message.failure.blank}")
-    @NotNull(message = "${core.message.failure.null}")
-    @Size(min = 3, max = 250, message = "${core.message.failure.size}")
+    @NotBlank(message = "${app.message.failure.blank}")
+    @NotNull(message = "${app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
     @Column(unique = true)
     private String email;
 
