@@ -20,13 +20,13 @@ public class RoleDto extends GenericDto implements Serializable {
     @Serial
     private static final long serialVersionUID = 4857081171071795735L;
 
-    @NotEmpty(message = "${app.message.failure.empty}")
+    @NotEmpty(message = "{app.message.failure.empty}")
     private List<String> selectedOrganizationIds;
 
-    @NotEmpty(message = "${app.message.failure.empty}")
+    @NotEmpty(message = "{app.message.failure.empty}")
     private List<String> selectedMenuIds;
 
-    @NotEmpty(message = "${app.message.failure.empty}")
+    @NotEmpty(message = "{app.message.failure.empty}")
     private List<String> selectedPermissionIds;
 
 }

@@ -20,7 +20,7 @@ import java.io.Serial;
 @ValidPassword(
         passwordField = "password",
         confirmPasswordField = "confirmPassword",
-        message = "${app.message.failure.password}"
+        message = "{app.message.failure.password}"
 )
 public class SignupDto extends GenericDto {
 

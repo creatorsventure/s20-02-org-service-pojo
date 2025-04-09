@@ -22,9 +22,9 @@ public class PermissionDto extends GenericDto implements Serializable {
     @Serial
     private static final long serialVersionUID = -8645621097003240516L;
 
-    @NotBlank(message = "${app.message.failure.blank}")
-    @NotNull(message = "${app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     private String permissionCode;
 
 }

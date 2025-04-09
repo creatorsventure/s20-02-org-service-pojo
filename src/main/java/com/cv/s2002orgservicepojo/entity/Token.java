@@ -27,23 +27,23 @@ public class Token implements Serializable {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @NotBlank(message = "${app.message.failure.blank}")
-    @NotNull(message = "${app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     @Column
     private String tokenHash;
 
-    @NotBlank(message = "${app.message.failure.blank}")
-    @NotNull(message = "${app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     @Column
     private String userId;
 
-    @NotNull(message = "${app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
     @Column
     private LocalDateTime issuedAt;
 
-    @NotNull(message = "${app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
     @Column
     private LocalDateTime expiresAt;
 

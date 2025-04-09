@@ -21,9 +21,9 @@ public class OrganizationDto extends GenericDto implements Serializable {
     @Serial
     private static final long serialVersionUID = 2819106570149094795L;
 
-    @NotBlank(message = "${app.message.failure.blank}")
-    @NotNull(message = "${app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     private String organizationCode;
 
 }
