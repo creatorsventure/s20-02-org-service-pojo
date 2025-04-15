@@ -25,27 +25,27 @@ public class UserDetail extends GenericEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 968092115767358060L;
 
-    @NotBlank(message = "${app.message.failure.blank}")
-    @NotNull(message = "${app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     @Column(unique = true)
     private String userId;
 
-    @NotBlank(message = "${app.message.failure.blank}")
-    @NotNull(message = "${app.message.failure.blank}")
-    @Size(min = 3, max = 25, message = "${app.message.failure.size}")
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
     @Column
     private String mobileNumber;
 
-    @NotBlank(message = "${app.message.failure.blank}")
-    @NotNull(message = "${app.message.failure.blank}")
-    @Size(min = 3, max = 5, message = "${app.message.failure.size}")
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 5, message = "{app.message.failure.size}")
     @Column
     private String countryCode;
 
-    @NotBlank(message = "${app.message.failure.blank}")
-    @NotNull(message = "${app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "${app.message.failure.size}")
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     @Column(unique = true)
     private String email;
 
