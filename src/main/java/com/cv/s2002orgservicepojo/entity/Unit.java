@@ -1,63 +1,63 @@
-package com.cv.s2002orgservicepojo.dto;
+package com.cv.s2002orgservicepojo.entity;
 
-import com.cv.s10coreservice.annotation.ValidMobileNumber;
-import com.cv.s10coreservice.dto.generic.GenericDto;
-import jakarta.validation.constraints.Email;
+import com.cv.s10coreservice.entity.generic.GenericEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @RequiredArgsConstructor
+@AllArgsConstructor
 @SuperBuilder
 @ToString(callSuper = true)
-@ValidMobileNumber(
-        countryCodeField = "countryCode",
-        mobileNumberField = "contactPhone",
-        message = "{app.message.failure.phone}"
-)
-public class BankUnitDto extends GenericDto implements Serializable {
+@Entity
+public class Unit extends GenericEntity implements Serializable {
+
+
+    @Serial
+    private static final long serialVersionUID = 1884485661070307104L;
+
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Column(nullable = false, unique = true)
     private String unitCode;
 
-    @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
-    private String unitType;
-
-    @NotBlank(message = "{app.message.failure.blank}")
-    @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 5, message = "{app.message.failure.size}")
-    private String countryCode;
+    @Column(nullable = false, unique = true)
+    private Integer unitId;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
-    private String contactPerson;
-
-    @NotBlank(message = "{app.message.failure.blank}")
-    @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
-    @Email(message = "{app.message.failure.email}")
-    private String contactEmailId;
-
-    @NotBlank(message = "{app.message.failure.blank}")
-    @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
-    private String contactPhone;
-
-    @NotBlank(message = "{app.message.failure.blank}")
-    @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Column(nullable = false, unique = true)
     private String bankIdentificationCode;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Column
+    private String type;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Column
+    private String legalName;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Column
+    private String address;
 
 }

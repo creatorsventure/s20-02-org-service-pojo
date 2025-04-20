@@ -19,16 +19,23 @@ import java.io.Serializable;
 @SuperBuilder
 @ToString(callSuper = true)
 @Entity
-public class Scheme extends GenericEntity implements Serializable {
-
+public class Currency extends GenericEntity implements Serializable {
     @Serial
-    private static final long serialVersionUID = -607047500782735668L;
+    private static final long serialVersionUID = -2348933724146970745L;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
-    @Column(unique = true)
+    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
+    @Column
     private String code;
 
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
+    @Column
+    private String symbol;
+
+    @NotNull(message = "{app.message.failure.blank}")
+    private Integer decimalPlaces;
 
 }

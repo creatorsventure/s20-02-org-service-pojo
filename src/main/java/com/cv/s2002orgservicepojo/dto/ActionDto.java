@@ -10,20 +10,23 @@ import lombok.experimental.SuperBuilder;
 import java.io.Serial;
 import java.io.Serializable;
 
-@Getter
-@Setter
-@RequiredArgsConstructor
-@AllArgsConstructor
+@Data
 @SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(callSuper = true)
-public class SchemeDto extends GenericDto implements Serializable {
-
+@EqualsAndHashCode(callSuper = true)
+public class ActionDto extends GenericDto implements Serializable {
     @Serial
-    private static final long serialVersionUID = 4815016539535252623L;
+    private static final long serialVersionUID = -2348933724146970745L;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
     private String code;
+
+    private boolean partial;
+
+    private boolean permitExcess;
 
 }
