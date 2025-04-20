@@ -9,6 +9,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -48,6 +49,10 @@ public class UnitDto extends GenericDto implements Serializable {
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     private String address;
+
+    private List<String> selectedActionIds;
+    private List<String> selectedCurrencyIds;
+    private String selectedOptionId;
 
 
 }

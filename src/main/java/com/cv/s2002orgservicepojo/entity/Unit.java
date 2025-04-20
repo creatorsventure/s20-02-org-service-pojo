@@ -1,8 +1,7 @@
 package com.cv.s2002orgservicepojo.entity;
 
 import com.cv.s10coreservice.entity.generic.GenericEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -11,6 +10,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -60,4 +60,31 @@ public class Unit extends GenericEntity implements Serializable {
     @Column
     private String address;
 
+    @ManyToMany
+    @JoinTable(name = "unit_action_mapping",
+            joinColumns = @JoinColumn(name = "unit_id", referencedColumnName = "id", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "action_id", referencedColumnName = "id", nullable = false)
+    )
+    @ToString.Exclude
+    private List<Action> actionList;
+
+    @ManyToMany
+    @JoinTable(name = "unit_currency_mapping",
+            joinColumns = @JoinColumn(name = "unit_id", referencedColumnName = "id", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "currency_id", referencedColumnName = "id", nullable = false)
+    )
+    @ToString.Exclude
+    private List<Currency> currencyList;
+
+    @ManyToMany
+    @JoinTable(name = "unit_engine_mapping",
+            joinColumns = @JoinColumn(name = "unit_id", referencedColumnName = "id", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "engine_id", referencedColumnName = "id", nullable = false)
+    )
+    @ToString.Exclude
+    private List<Engine> engineList;
+
+    @ManyToOne
+    @JoinColumn(name = "option_id", referencedColumnName = "id", nullable = false)
+    private Option option;
 }

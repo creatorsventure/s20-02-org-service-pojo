@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.cv</groupId>
     <artifactId>s20-02-org-service-pojo</artifactId>
-    <version>0.0.52-SNAPSHOT</version>
+    <version>0.0.53-SNAPSHOT</version>
     <name>s20-02-org-service-pojo</name>
     <description>s20-02-org-service-pojo</description>
     <url/>
