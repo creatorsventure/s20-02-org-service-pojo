@@ -27,12 +27,16 @@ public class Action extends GenericEntity implements Serializable {
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 25, message = "{app.message.failure.size}")
     @Column
-    private String code;
+    private String actionCode;
+
+    @NotNull(message = "{app.message.failure.blank}")
+    @Column
+    private Integer actionId;
 
     @Column
-    private boolean partial;
+    private boolean partial = false;
 
     @Column
-    private boolean permitExcess;
+    private boolean permitExcess = false;
 
 }

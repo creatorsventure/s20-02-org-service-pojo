@@ -1,6 +1,7 @@
 package com.cv.s2002orgservicepojo.entity;
 
 import com.cv.s10coreservice.entity.generic.GenericEntity;
+import com.cv.s2002orgservicepojo.enm.EngineType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotBlank;
@@ -25,15 +26,18 @@ public class Engine extends GenericEntity implements Serializable {
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
     @Column
-    private String code;
+    private EngineType type;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     @Column
-    private String address;
+    private String serviceURL;
+
+    @NotNull(message = "{app.message.failure.blank}")
+    @Column
+    private Integer timeout;
 
     @NotNull(message = "{app.message.failure.blank}")
     @Column

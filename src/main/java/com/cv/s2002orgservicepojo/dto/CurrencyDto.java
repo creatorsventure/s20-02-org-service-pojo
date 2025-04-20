@@ -24,11 +24,6 @@ public class CurrencyDto extends GenericDto implements Serializable {
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 25, message = "{app.message.failure.size}")
-    private String code;
-
-    @NotBlank(message = "{app.message.failure.blank}")
-    @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
     private String symbol;
 
     @NotNull(message = "{app.message.failure.blank}")

@@ -23,7 +23,10 @@ public class ActionDto extends GenericDto implements Serializable {
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 25, message = "{app.message.failure.size}")
-    private String code;
+    private String actionCode;
+
+    @NotNull(message = "{app.message.failure.blank}")
+    private Integer actionId;
 
     private boolean partial;
 

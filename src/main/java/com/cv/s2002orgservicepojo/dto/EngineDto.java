@@ -1,6 +1,7 @@
 package com.cv.s2002orgservicepojo.dto;
 
 import com.cv.s10coreservice.dto.generic.GenericDto;
+import com.cv.s2002orgservicepojo.enm.EngineType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -19,17 +20,19 @@ import java.io.Serializable;
 public class EngineDto extends GenericDto implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = -8413128872046476638L;
+    private static final long serialVersionUID = -2543124637299400171L;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
-    private String code;
+    private EngineType type;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
-    private String address;
+    private String serviceURL;
+
+    @NotNull(message = "{app.message.failure.blank}")
+    private Integer timeout;
 
     @NotNull(message = "{app.message.failure.blank}")
     private Integer priority;
