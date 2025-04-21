@@ -86,5 +86,5 @@ public class Unit extends GenericEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "option_id", referencedColumnName = "id", nullable = false)
-    private Option option;
+    private Options options;
 }

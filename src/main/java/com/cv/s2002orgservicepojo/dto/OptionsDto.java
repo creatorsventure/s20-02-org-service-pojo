@@ -13,7 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class OptionDto extends GenericDto implements Serializable {
+public class OptionsDto extends GenericDto implements Serializable {
 
 
     @Serial

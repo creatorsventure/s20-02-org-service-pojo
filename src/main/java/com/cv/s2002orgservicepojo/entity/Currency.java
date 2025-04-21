@@ -25,7 +25,7 @@ public class Currency extends GenericEntity implements Serializable {
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
+    @Size(min = 3, max = 50, message = "{app.message.failure.size}")
     @Column
     private String symbol;
 

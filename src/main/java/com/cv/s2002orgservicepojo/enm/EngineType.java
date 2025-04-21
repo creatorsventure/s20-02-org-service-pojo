@@ -1,5 +1,7 @@
 package com.cv.s2002orgservicepojo.enm;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 @Getter
@@ -13,7 +15,13 @@ public enum EngineType {
         this.code = code;
     }
 
-    public static EngineType fromCode(int code) {
+    @JsonValue
+    public int toValue() {
+        return code;
+    }
+
+    @JsonCreator
+    public static EngineType fromValue(int code) {
         for (EngineType type : EngineType.values()) {
             if (type.getCode() == code) {
                 return type;

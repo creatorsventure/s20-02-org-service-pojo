@@ -22,7 +22,6 @@ public class EngineDto extends GenericDto implements Serializable {
     @Serial
     private static final long serialVersionUID = -2543124637299400171L;
 
-    @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     private EngineType type;
 

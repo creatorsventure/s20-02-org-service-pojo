@@ -16,7 +16,7 @@ import java.io.Serializable;
 @SuperBuilder
 @ToString(callSuper = true)
 @Entity
-public class Option extends GenericEntity implements Serializable {
+public class Options extends GenericEntity implements Serializable {
 
 
     @Serial
