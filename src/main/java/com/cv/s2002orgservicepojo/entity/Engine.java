@@ -26,7 +26,6 @@ public class Engine extends GenericEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = -2348933724146970745L;
 
-    @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Column
     private EngineType type;
