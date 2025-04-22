@@ -4,6 +4,7 @@ import com.cv.s10coreservice.entity.generic.GenericEntity;
 import com.cv.s2002orgservicepojo.enm.EngineType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -12,6 +13,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -42,5 +44,9 @@ public class Engine extends GenericEntity implements Serializable {
     @NotNull(message = "{app.message.failure.blank}")
     @Column
     private Integer priority;
+
+    @ManyToMany(mappedBy = "engineList")
+    @ToString.Exclude
+    private List<Unit> unitList;
 
 }

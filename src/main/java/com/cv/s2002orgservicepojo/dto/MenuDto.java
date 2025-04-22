@@ -49,4 +49,6 @@ public class MenuDto extends GenericDto implements Serializable {
     @NotNull(message = "{app.message.failure.blank}")
     private Integer menuType;
 
+    private boolean dashboardCountCard;
+
 }

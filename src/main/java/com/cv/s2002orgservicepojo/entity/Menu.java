@@ -59,6 +59,9 @@ public class Menu extends GenericEntity implements Serializable {
     @Column
     private Integer menuType;
 
+    @Column
+    private boolean dashboardCountCard = false;
+
     @ManyToMany(mappedBy = "menuList")
     @ToString.Exclude
     private List<Role> roleList;

@@ -3,11 +3,13 @@ package com.cv.s2002orgservicepojo.entity;
 import com.cv.s10coreservice.entity.generic.GenericEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,7 +18,7 @@ import java.io.Serializable;
 @SuperBuilder
 @ToString(callSuper = true)
 @Entity
-public class Option extends GenericEntity implements Serializable {
+public class Options extends GenericEntity implements Serializable {
 
 
     @Serial
@@ -39,5 +41,9 @@ public class Option extends GenericEntity implements Serializable {
 
     @Column
     private boolean masking = false;
+
+    @OneToMany(mappedBy = "options")
+    @ToString.Exclude
+    private List<Unit> unitList;
 
 }
