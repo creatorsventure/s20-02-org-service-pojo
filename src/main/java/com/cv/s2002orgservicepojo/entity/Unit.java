@@ -2,6 +2,7 @@ package com.cv.s2002orgservicepojo.entity;
 
 import com.cv.s10coreservice.entity.generic.GenericEntity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -48,11 +49,22 @@ public class Unit extends GenericEntity implements Serializable {
     @Column
     private String type;
 
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Column
+    private String legalName;
+
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     @Column
-    private String legalName;
+    private String adminName;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Email(message = "{app.message.failure.email}")
+    @Column
+    private String adminEmail;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")

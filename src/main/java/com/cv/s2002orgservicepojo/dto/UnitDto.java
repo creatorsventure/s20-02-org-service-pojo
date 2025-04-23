@@ -1,6 +1,7 @@
 package com.cv.s2002orgservicepojo.dto;
 
 import com.cv.s10coreservice.dto.generic.GenericDto;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -49,6 +50,17 @@ public class UnitDto extends GenericDto implements Serializable {
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     private String address;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    private String adminName;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Email(message = "{app.message.failure.email}")
+    private String adminEmail;
 
     private List<String> selectedActionIds;
     private List<String> selectedCurrencyIds;
