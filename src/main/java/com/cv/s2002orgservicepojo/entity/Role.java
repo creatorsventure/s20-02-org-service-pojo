@@ -1,10 +1,7 @@
 package com.cv.s2002orgservicepojo.entity;
 
 import com.cv.s10coreservice.entity.generic.GenericEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -24,13 +21,9 @@ public class Role extends GenericEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = -898422367882946943L;
 
-    @ManyToMany
-    @JoinTable(name = "role_organization_mapping",
-            joinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "organization_id", referencedColumnName = "id", nullable = false)
-    )
-    @ToString.Exclude
-    private List<Organization> organizationList;
+    @ManyToOne
+    @JoinColumn(name = "organization_id", referencedColumnName = "id", nullable = false)
+    private Organization organization;
 
     @ManyToMany
     @JoinTable(name = "role_permission_mapping",
@@ -48,7 +41,7 @@ public class Role extends GenericEntity implements Serializable {
     @ToString.Exclude
     private List<Menu> menuList;
 
-    @ManyToMany(mappedBy = "roleList")
+    @OneToMany(mappedBy = "role")
     @ToString.Exclude
     private List<UserDetail> userDetailList;
 

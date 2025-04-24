@@ -3,7 +3,7 @@ package com.cv.s2002orgservicepojo.entity;
 import com.cv.s10coreservice.entity.generic.GenericEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -32,7 +32,7 @@ public class Organization extends GenericEntity implements Serializable {
     @Column(unique = true)
     private String organizationCode;
 
-    @ManyToMany(mappedBy = "organizationList")
+    @OneToMany(mappedBy = "organization")
     @ToString.Exclude
     private List<Role> roleList;
 

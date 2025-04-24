@@ -52,13 +52,9 @@ public class UserDetail extends GenericEntity implements Serializable {
     @Column
     private LocalDateTime lastLogin = LocalDateTime.now();
 
-    @ManyToMany
-    @JoinTable(name = "user_role_mapping",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
-    )
-    @ToString.Exclude
-    private List<Role> roleList;
+    @ManyToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false)
+    private Role role;
 
     @OneToOne(mappedBy = "userDetail", fetch = FetchType.EAGER)
     private Password password;
