@@ -28,7 +28,10 @@ public class Options extends GenericEntity implements Serializable {
     private boolean captcha = false;
 
     @Column
-    private boolean otpAuthentication = false;
+    private boolean transactionOTP = false;
+
+    @Column
+    private boolean loginOTP = false;
 
     @Column
     private boolean tokenization = false;

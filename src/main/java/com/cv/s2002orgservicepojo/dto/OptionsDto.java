@@ -20,7 +20,8 @@ public class OptionsDto extends GenericDto implements Serializable {
     private static final long serialVersionUID = -2251046723387096809L;
 
     private boolean captcha;
-    private boolean otpAuthentication;
+    private boolean transactionOTP;
+    private boolean loginOTP;
     private boolean tokenization;
     private boolean cvvSecurity;
     private boolean makerCheckerMode;
