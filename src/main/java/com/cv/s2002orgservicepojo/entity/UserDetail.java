@@ -39,7 +39,7 @@ public class UserDetail extends GenericEntity implements Serializable {
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 5, message = "{app.message.failure.size}")
+    @Size(min = 2, max = 5, message = "{app.message.failure.size}")
     @Column
     private String countryCode;
 
@@ -54,11 +54,14 @@ public class UserDetail extends GenericEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
     private Role role;
 
     @OneToOne(mappedBy = "userDetail", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private Password password;
 
     @OneToMany(mappedBy = "userDetail", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private List<Token> tokenList;
 }

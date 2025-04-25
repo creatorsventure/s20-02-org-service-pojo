@@ -13,7 +13,8 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -41,7 +42,7 @@ public class UserDetailDto extends GenericDto implements Serializable {
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 5, message = "{app.message.failure.size}")
+    @Size(min = 2, max = 5, message = "{app.message.failure.size}")
     private String countryCode;
 
     @NotBlank(message = "{app.message.failure.blank}")
