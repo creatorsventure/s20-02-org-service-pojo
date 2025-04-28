@@ -35,7 +35,7 @@ public class Unit extends GenericEntity implements Serializable {
 
     @NotNull(message = "{app.message.failure.blank}")
     @Column(nullable = false, unique = true)
-    private Integer unitId;
+    private Long unitId;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
@@ -62,9 +62,27 @@ public class Unit extends GenericEntity implements Serializable {
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    @Column
+    private String adminUserId;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     @Email(message = "{app.message.failure.email}")
     @Column
     private String adminEmail;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
+    @Column
+    private String adminMobileNumber;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 5, message = "{app.message.failure.size}")
+    @Column
+    private String adminCountryCode;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")

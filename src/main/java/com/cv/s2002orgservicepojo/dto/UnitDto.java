@@ -29,7 +29,7 @@ public class UnitDto extends GenericDto implements Serializable {
     private String unitCode;
 
     @NotNull(message = "{app.message.failure.blank}")
-    private Integer unitId;
+    private Long unitId;
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
@@ -59,8 +59,23 @@ public class UnitDto extends GenericDto implements Serializable {
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
+    private String adminUserId;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     @Email(message = "{app.message.failure.email}")
     private String adminEmail;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 25, message = "{app.message.failure.size}")
+    private String adminMobileNumber;
+
+    @NotBlank(message = "{app.message.failure.blank}")
+    @NotNull(message = "{app.message.failure.blank}")
+    @Size(min = 3, max = 5, message = "{app.message.failure.size}")
+    private String adminCountryCode;
 
     private List<String> selectedActionIds;
     private List<String> selectedCurrencyIds;

@@ -10,6 +10,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serial;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -22,7 +23,7 @@ import java.io.Serial;
         confirmPasswordField = "confirmPassword",
         message = "{app.message.failure.password}"
 )
-public class SignupDto extends GenericDto {
+public class SignupDto extends GenericDto implements Serializable {
 
     @Serial
     private static final long serialVersionUID = -7192794735191903117L;

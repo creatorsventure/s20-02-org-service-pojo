@@ -60,5 +60,6 @@ public class UserDetail extends GenericEntity implements Serializable {
     private Password password;
 
     @OneToMany(mappedBy = "userDetail", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private List<Token> tokenList;
 }
