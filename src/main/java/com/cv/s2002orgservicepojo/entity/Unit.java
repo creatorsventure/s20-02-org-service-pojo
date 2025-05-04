@@ -116,5 +116,6 @@ public class Unit extends GenericEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "option_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
     private Options options;
 }

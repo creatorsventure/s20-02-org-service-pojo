@@ -52,5 +52,6 @@ public class Token implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_detail_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
     private UserDetail userDetail;
 }

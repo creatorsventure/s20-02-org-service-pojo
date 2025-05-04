@@ -54,9 +54,11 @@ public class UserDetail extends GenericEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
     private Role role;
 
     @OneToOne(mappedBy = "userDetail", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private Password password;
 
     @OneToMany(mappedBy = "userDetail", cascade = CascadeType.ALL, orphanRemoval = true)

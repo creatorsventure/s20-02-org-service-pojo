@@ -23,6 +23,7 @@ public class Role extends GenericEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "organization_id", referencedColumnName = "id", nullable = false)
+    @ToString.Exclude
     private Organization organization;
 
     @ManyToMany
