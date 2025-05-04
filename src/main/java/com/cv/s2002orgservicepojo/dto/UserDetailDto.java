@@ -1,11 +1,9 @@
 package com.cv.s2002orgservicepojo.dto;
 
+import com.cv.s10coreservice.annotation.ValidEmailDomain;
 import com.cv.s10coreservice.annotation.ValidMobileNumber;
 import com.cv.s10coreservice.dto.generic.GenericDto;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -46,9 +44,12 @@ public class UserDetailDto extends GenericDto implements Serializable {
     private String countryCode;
 
     @NotBlank(message = "{app.message.failure.blank}")
-    @NotNull(message = "{app.message.failure.blank}")
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
-    @Email(message = "{app.message.failure.email}")
+    @Pattern(
+            regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$",
+            message = "{app.message.failure.email}"
+    )
+    @ValidEmailDomain(message = "{app.message.failure.email}")
     private String email;
 
     private LocalDateTime lastLogin;
