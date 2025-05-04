@@ -39,7 +39,7 @@ public class UserDetail extends GenericEntity implements Serializable {
 
     @NotBlank(message = "{app.message.failure.blank}")
     @NotNull(message = "{app.message.failure.blank}")
-    @Size(min = 3, max = 5, message = "{app.message.failure.size}")
+    @Size(min = 1, max = 5, message = "{app.message.failure.size}")
     @Column
     private String countryCode;
 
