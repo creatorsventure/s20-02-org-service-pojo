@@ -25,9 +25,6 @@ public class Options extends GenericEntity implements Serializable {
     private static final long serialVersionUID = 7296698143446469924L;
 
     @Column
-    private boolean enforce = false;
-
-    @Column
     private boolean captcha = false;
 
     @Column
