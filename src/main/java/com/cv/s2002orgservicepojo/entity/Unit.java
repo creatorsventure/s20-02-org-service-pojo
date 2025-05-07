@@ -20,6 +20,9 @@ import java.util.List;
 @SuperBuilder
 @ToString(callSuper = true)
 @Entity
+@Table(uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"unit_id", "admin_user_id"}),
+})
 public class Unit extends GenericEntity implements Serializable {
 
 
@@ -118,4 +121,12 @@ public class Unit extends GenericEntity implements Serializable {
     @JoinColumn(name = "option_id", referencedColumnName = "id", nullable = false)
     @ToString.Exclude
     private Options options;
+
+    @ManyToMany
+    @JoinTable(name = "unit_scheme_mapping",
+            joinColumns = @JoinColumn(name = "unit_id", referencedColumnName = "id", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "scheme_id", referencedColumnName = "id", nullable = false)
+    )
+    @ToString.Exclude
+    private List<Scheme> schemeList;
 }

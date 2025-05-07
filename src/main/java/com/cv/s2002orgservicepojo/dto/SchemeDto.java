@@ -26,4 +26,7 @@ public class SchemeDto extends GenericDto implements Serializable {
     @Size(min = 3, max = 250, message = "{app.message.failure.size}")
     private String code;
 
+    @NotNull(message = "{app.message.failure.blank}")
+    private Integer priority;
+
 }

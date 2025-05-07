@@ -80,6 +80,7 @@ public class UnitDto extends GenericDto implements Serializable {
     private List<String> selectedActionIds;
     private List<String> selectedCurrencyIds;
     private List<String> selectedEngineIds;
+    private List<String> selectedSchemeIds;
     private String selectedOptionsId;
 
 
